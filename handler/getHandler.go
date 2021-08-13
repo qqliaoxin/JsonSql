@@ -5,8 +5,8 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"jsonSql/core"
-	"jsonSql/logger"
+	"github.com/qqliaoxin/jsonsql/core"
+	"github.com/qqliaoxin/jsonsql/logger"
 )
 
 func GetHandler(w http.ResponseWriter, r *http.Request) {

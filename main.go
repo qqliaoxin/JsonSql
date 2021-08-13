@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"jsonSql/handler"
-	"jsonSql/logger"
+	"github.com/qqliaoxin/jsonsql/handler"
+	"github.com/qqliaoxin/jsonsql/logger"
 )
 
 func main() {

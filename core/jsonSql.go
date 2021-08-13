@@ -3,10 +3,11 @@ package core
 import (
 	"errors"
 	"fmt"
-	conf "jsonSql/conf"
-	"jsonSql/db"
-	"jsonSql/logger"
 	"strings"
+
+	conf "github.com/qqliaoxin/jsonsql/conf"
+	"github.com/qqliaoxin/jsonsql/db"
+	"github.com/qqliaoxin/jsonsql/logger"
 )
 
 var (

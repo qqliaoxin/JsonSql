@@ -2,8 +2,9 @@ package db
 
 import (
 	"fmt"
-	"jsonSql/conf"
-	"jsonSql/logger"
+
+	"github.com/qqliaoxin/jsonsql/conf"
+	"github.com/qqliaoxin/jsonsql/logger"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"

@@ -1,4 +1,4 @@
-module jsonSql
+module github.com/qqliaoxin/jsonsql
 
 go 1.16
 
