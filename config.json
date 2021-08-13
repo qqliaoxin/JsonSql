@@ -1,0 +1,15 @@
+{
+    "Table":{
+        "User":{
+            "TableName":"apijson_user",
+            "Access" :["LOGIN", "ADMIN"]
+        },
+        "Test":{
+            "TableName":"mf_test",
+            "Access" :["UNKNOWN"]
+        }
+
+    },
+    "Debug": true,
+    "Explain": true
+}

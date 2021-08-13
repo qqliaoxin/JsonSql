@@ -1,0 +1,7 @@
+{
+    "DataBase" : "apijson",
+	"UserName" : "root",
+	"PassWord" : "root",
+	"Host":     "127.0.0.1",
+	"Port":     3306
+}
