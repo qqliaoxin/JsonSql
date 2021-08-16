@@ -8,7 +8,7 @@ import (
 	"github.com/qqliaoxin/jsonsql/logger"
 )
 
-func GetHandler(w http.ResponseWriter, r *http.Request) {
+func InsterHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodOptions {
 		handleCors(w)
 		w.WriteHeader(http.StatusOK)
@@ -19,13 +19,13 @@ func GetHandler(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	} else {
-		handleRequestJson(1, data, w)
+		handleRequestJson(2, data, w)
 	}
 }
 
 //执行 JsonSql 核心处理逻辑
-func (c *QueryContext) doQuery() {
-	m := core.NewJsonSQL(c.req)
+func (c *QueryContext) doInster() {
+	m := core.NewInsJsonSQL(c.req)
 	c.err = m.Err
 	c.data = m.Data
 }

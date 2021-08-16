@@ -10,6 +10,9 @@ import (
 
 func main() {
 	http.HandleFunc("/get", handler.GetHandler)
+	http.HandleFunc("/set", handler.InsterHandler)
+	http.HandleFunc("/up", handler.UpdateHandler)
+	http.HandleFunc("/del", handler.DeleteHandler)
 	addr := ":8080"
 	logger.SetLevel(logger.DEBUG)
 	logger.Info("server listen on " + addr)

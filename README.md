@@ -205,6 +205,78 @@ SELECT id,detail AS Detail,NickName FROM apijson_user AS user, (SELECT nick_name
 ```
 SELECT * FROM mf_test AS test WHERE  detail IN (SELECT id FROM apijson_user AS user WHERE  userid = ?) AND  id IN (1,2,3,4)
 ```
+# Inster 插入 请求连接 http://localhost:8080/set
+```
+{
+    "Test":{
+        "@column": "id,name,pwd",
+        "@values": [121,"ssdfaf","paw1233456"]
+    }
+}
+```
+生成的sql语句：
+```
+INSERT INTO  mf_test (id,name,pwd) VALUES(?,?,?)
+```
+OR
+```
+{
+    "sql@":{
+        "User":{
+            "@c": "id",
+            "@w":{
+                "userid":1
+            }
+        }
+    },
+    "Test":{
+        "@column": "userId,detail",
+        "User":{
+            "@column": "id,desc",
+            "@where":{
+             "detail[]": "sql@",
+            "id[]":[1,2,3,4]
+            }
+        }
+    }
+}
+```
+生成的sql语句：
+```
+INSERT INTO  mf_test (userId,detail) SELECT id,desc FROM apijson_user AS user WHERE  detail IN (SELECT id FROM apijson_user AS user WHERE  userid = ?) AND  id IN (1,2,3,4)
+```
+# Update 更新 请求连接 http://localhost:8080/up
+```
+{
+    "Test":{
+        "@set": {
+            "userId": 411,
+            "detail": "kkkkkk"            
+        },
+        "@where": {
+            "id": 1
+        }
+    }
+}
+```
+生成的sql语句：
+```
+UPDATE  mf_test SET userId = ?,detail = ? WHERE  id = ?
+```
+# Delete 删除 请求连接 http://localhost:8080/del
+```
+{
+    "Test":{
+        "@where": {
+            "id": 1
+        }
+    }
+}
+```
+生成的sql语句：
+```
+DELETE FROM  mf_test WHERE  id = ?
+```
 ## 加入社区
 
 扫码加入即刻交流与反馈：
